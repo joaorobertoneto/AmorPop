@@ -8,6 +8,8 @@ var anaPA = 0
 var dias = 1
 var periodo = 1
 
+
+
 function gameOver() {
     document.getElementById("encontros").innerHTML = '<p>O fim da sua semana nesse sonho chega ao fim, e você mais uma vez acorda em sua cama solitária...</p><p>Você deseja voltar a dormir?</p><input type="button" value="Voltar a dormir" onclick="seteDias(1,1), anaPA=0, mikaPA=0, linPA=0">'
     document.getElementById("tempo").innerHTML = ""
