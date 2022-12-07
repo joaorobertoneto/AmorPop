@@ -1,0 +1,74 @@
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+}
+
+h1 {
+    text-decoration: underline;
+    color: white;
+    text-align: center;
+}
+
+h2{
+    color: white;
+    text-align: center; 
+}
+
+h3{
+    color: white;
+    text-align: left; 
+}
+
+
+body {
+    background-color: rgb(255, 153, 170);
+    opacity: 0.7;
+    text-align: center
+   
+}
+
+img{
+    width: 40%;
+    height: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+input[type='button'] {
+
+    background-color: white;
+    border:solid;
+    border-radius: 12px;
+    color:rgb(255, 153, 170);
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: 0.5s padding;
+}
+input[type='button']:hover {
+    padding: 20px 35px;
+}
+
+#tempo {
+    margin: 30px;
+    font-size: 30px;
+}
+.tempoimg {
+    width: 30px;
+    clear: none;
+    float: left;
+}
+
+.tempodiv {
+    width: 210px;
+}
+
+.diadiv {
+    clear: both;
+}
