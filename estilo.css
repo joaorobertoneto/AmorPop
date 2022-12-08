@@ -58,9 +58,10 @@ input[type='button']:hover {
 #tempo {
     margin: 30px;
     font-size: 30px;
+    border-radius: 12px;
 }
 .tempoimg {
-    width: 30px;
+    width: 40px;
     clear: none;
     float: left;
 }

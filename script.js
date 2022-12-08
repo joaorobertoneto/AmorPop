@@ -49,11 +49,11 @@ function seteDias(dia, tempo) {
     document.getElementById("intro").innerHTML = ""
     document.getElementById("paquera").innerHTML = ""
     if (tempo == 1)
-        document.getElementById("tempo").innerHTML = "Manhã"+"<img class='tempoimg' src='imagemtempo.png'>"
+        document.getElementById("tempo").innerHTML = "Manhã"+"<img class='tempoimg' src='sunrise.png'>"
     if (tempo == 2)
-        document.getElementById("tempo").innerHTML = "Meio-dia"+"<img class='tempoimg' src='imagemtempo.png'>"
+        document.getElementById("tempo").innerHTML = "Meio-dia"+"<img class='tempoimg' src='solnasc.png'>"
     if (tempo == 3)
-        document.getElementById("tempo").innerHTML = "Tarde"+"<img class='tempoimg' src='imagemtempo.png'>"
+        document.getElementById("tempo").innerHTML = "Tarde"+"<img class='tempoimg' src='solpon.png'>"
     document.getElementById("dia").innerHTML = "Dia " + dia
     document.getElementById("encontros").innerHTML = "<p>Com quem você gostaria de se encontrar hoje, Sonhador?</p><input type='button' value='Mikaella' onclick='mikaGreet(mikaPA)'><input type='button' value='Ana Clara' onclick='anaGreet(anaPA)'><input type='button' value='Linda' onclick='linGreet(linPA)'>";
     if (dia == 8 && periodo==1)
@@ -75,7 +75,7 @@ function seteDias(dia, tempo) {
         document.getElementById("tempo").innerHTML = ""
     }
     if (tempo == 4) {
-        document.getElementById("tempo").innerHTML = "Noite"+"<img class='tempoimg' src='imagemtempo.png'>"
+        document.getElementById("tempo").innerHTML = "Noite"+"<img class='tempoimg' src='lua.png'>"
         return periodo = 0, dias += 1
     }
 }
