@@ -11,7 +11,7 @@ var periodo = 1
 
 
 function gameOver() {
-    document.getElementById("encontros").innerHTML = '<p>O fim da sua semana nesse sonho chega ao fim, e você mais uma vez acorda em sua cama solitária...</p><p>Você deseja voltar a dormir?</p><input type="button" value="Voltar a dormir" onclick="seteDias(1,1), anaPA=0, mikaPA=0, linPA=0">'
+    document.getElementById("encontros").innerHTML = '<p>O fim da sua semana nesse sonho chega ao fim, e você mais uma vez acorda em sua cama solitária...</p><p>Você deseja voltar a dormir?</p><input type="button" value="Voltar a dormir" onclick="seteDias(1,1), anaPA=0, mikaPA=0, linPA=0"><input type="button" value="Acordar" onclick="document.getElementById('+"'encontros'"+').innerHTML = '+"'<p>Obrigado por jogar!</p>'"+'">'
     document.getElementById("tempo").innerHTML = ""
     document.getElementById("dia").innerHTML = "Sua cama"
 }
@@ -106,13 +106,13 @@ function mikaDialog() {
             document.getElementById("encontros").innerHTML = '<p> "Sonhador, responde rápido. Que tipo de pessoa você se dá bem?" </p> <input type="button" value ="Pessoas que me fazem rir, são as melhores de ter por perto." onclick="mikaAns(7)"> <br> <input type="button" value="Pessoas que se interessam e cuidam de mim, gosto de me sentir cuidado por alguém" onclick="mikaAns(8)" ><br> <input type="button" value="Pessoas inteligentes, é bom manter um cérebro no grupo" onclick="mikaAns(9)" >'
             return periodo += 1
         case 4:
-            document.getElementById("encontros").innerHTML = '<p>"Estive pensando em algo, Sonhador. Você contaria uma mentira para não machucar alguém?</p><input type="button" value="Se a verdade machucasse a pessoa, então sim." onclick="mikaAns(10)"><input type="button" value="Não, uma mentira é uma mentira." onclick="mikaAns(11)">'
+            document.getElementById("encontros").innerHTML = '<p>"Estive pensando em algo, Sonhador. Você contaria uma mentira para não machucar alguém?</p><input type="button" value="Se a verdade machucasse a pessoa, então sim." onclick="mikaAns(10)"><br><input type="button" value="Não, uma mentira é uma mentira." onclick="mikaAns(11)">'
             return periodo += 1
         case 5:
             document.getElementById("encontros").innerHTML = '<p>"O que importa mais pra você, aparência ou personalidade?"</p><input type="button" value="Aparência, é claro. Eu preciso me sentir atraído pela minha namorada." onclick="mikaAns(12)"><input type="button" value="Personalidade, a aparência não importa muito se você for babaca." onclick="mikaAns(13)">'
             return periodo += 1
         case 6:
-            document.getElementById("encontros").innerHTML = '<p>"Acha que existe vida após a morte, Sonhador?"</p><input type="button" value="Sim, acredito em reeincarnações." onclick="mikaAns(14)"><input type="button" value="Não, nós apenas morremos." onclick="mikaAns(15)"><input type="button" value="Nunca parei para pensar nisso." onclick="mikaAns(16)">'
+            document.getElementById("encontros").innerHTML = '<p>"Acha que existe vida após a morte, Sonhador?"</p><input type="button" value="Sim, acredito em reeincarnações." onclick="mikaAns(14)"><br><input type="button" value="Não, nós apenas morremos." onclick="mikaAns(15)"><br><input type="button" value="Nunca parei para pensar nisso." onclick="mikaAns(16)">'
             return periodo += 1
         case 7:
             document.getElementById("encontros").innerHTML = '<p> "Ei, cara, andei pensando... existe algo no seu passsado que você receia contar a alguém?" </p> <input type="button" value="Todos temos algo a esconder, não é?" onclick="mikaAns(17)"><br> <input type="button" value ="Não, nadinha. Não me envergonho do meu passado." onclick="mikaAns(18)"> <br> <input type="button" value = "Sim, algo muito grande que não posso contar a ninguém." onclick="mikaAns(19)">'
