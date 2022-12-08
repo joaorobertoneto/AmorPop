@@ -51,7 +51,7 @@ function seteDias(dia, tempo) {
     if (tempo == 1)
         document.getElementById("tempo").innerHTML = "Manhã"+"<img class='tempoimg' src='sunrise.png'>"
     if (tempo == 2)
-        document.getElementById("tempo").innerHTML = "Meio-dia"+"<img class='tempoimg' src='solnasc.png'>"
+        document.getElementById("tempo").innerHTML = "<img class='tempoimg' src='sun-3-xxl.png'>Meio-dia"
     if (tempo == 3)
         document.getElementById("tempo").innerHTML = "Tarde"+"<img class='tempoimg' src='solpon.png'>"
     document.getElementById("dia").innerHTML = "Dia " + dia
@@ -59,18 +59,17 @@ function seteDias(dia, tempo) {
     if (dia == 8 && periodo==1)
         gameOver()
     if (mikaPA >= 10){
-        document.getElementById("encontros").innerHTML = "<p>Ao caminhar de volta para sua casa, você percebe alguém caminhando em sua direção...</p><p>Após se aproximar mais, você reconhece Mikaella vindo até você.</p><input type='button' value='Aceitar a confissão de Mikaella' onclick='mikaEnd(0)'>"
+        document.getElementById("encontros").innerHTML = "<p>Ao caminhar de volta para sua casa, você percebe alguém caminhando em sua direção...</p><p>Após se aproximar mais, você reconhece Mikaella vindo até você.</p><input type='button' value='Aceitar a confissão de Mikaella' onclick='mikaEnd(0)'><input type='button' value='Não aceitar a confissão de Mikaella' onclick='mikaPA=-999, seteDias("+dias+","+periodo+")'>"
         document.getElementById("dia").innerHTML = "A caminho de casa"
         document.getElementById("tempo").innerHTML = ""
     }
-
     if (anaPA >= 10){
-        document.getElementById("encontros").innerHTML = "<p>Ao caminhar de volta para sua casa, você percebe alguém caminhando em sua direção...</p><p>Após se aproximar mais, você reconhece Ana Clara vindo até você.</p><input type='button' value='Aceitar a confissão de Ana Clara' onclick='anaEnd(0)'>"
+        document.getElementById("encontros").innerHTML = "<p>Ao caminhar de volta para sua casa, você percebe alguém caminhando em sua direção...</p><p>Após se aproximar mais, você reconhece Ana Clara vindo até você.</p><input type='button' value='Aceitar a confissão de Ana Clara' onclick='anaEnd(0)'><input type='button' value='Não aceitar a confissão de Ana Clara' onclick='anaPA=-999, seteDias("+dias+","+periodo+")'>"
         document.getElementById("dia").innerHTML = "A caminho de casa"
         t.getElementById("tempo").innerHTML = ""
     }
     if (linPA >= 10){
-        document.getElementById("encontros").innerHTML = "<p>Ao caminhar de volta para sua casa, você percebe alguém caminhando em sua direção...</p><p>Após se aproximar mais, você reconhece Linda procurando você.</p><input type='button' value='Aceitar a confissão de Linda' onclick='linEnd(0)'>"
+        document.getElementById("encontros").innerHTML = "<p>Ao caminhar de volta para sua casa, você percebe alguém caminhando em sua direção...</p><p>Após se aproximar mais, você reconhece Linda procurando você.</p><input type='button' value='Aceitar a confissão de Linda' onclick='linEnd(0)'><input type='button' value='Não aceitar a confissão de Linda' onclick='linPA=-999, seteDias("+dias+","+periodo+")'>"
         document.getElementById("dia").innerHTML = "A caminho de casa"
         document.getElementById("tempo").innerHTML = ""
     }
@@ -244,6 +243,8 @@ function mikaAns(resposta) {
 
 function anaGreet(pa) {
     document.getElementById("paquera").innerHTML = "Ana Clara"
+    if (pa==-999)
+    return seteDias(dias, periodo)
     if (pa < 0)
         document.getElementById("encontros").innerHTML = '<p>"...Por que veio aqui? Não deixei claro que não quero ver você na minha frente?"</p>'
     if (pa >= 0 && pa <= 3)
@@ -273,7 +274,7 @@ function anaDialog() {
             document.getElementById("encontros").innerHTML = '<p> "Você costuma acordar de manhã? Ou prefere ficar acordado durante a madrugada?"</p><input type="button" value="Sempre acordo cedo, saber que tenho o dia todo pela frente me dá toda a energia que preciso." onclick="anaAns(13)"><br><input type="button" value="Durmo tarde e aproveito a noite, é calma e tranquila, durante essa período sinto que sou mais produtivo." onclick="anaAns(14)">'
             return periodo += 1
         case 6:
-            document.getElementById("encontros").innerHTML = '<p> "Essa é uma pergunta importante pra mim, então... Digamos que você estaja caminhano em uma estrada de terra, e então se depara com uma pedra no seu caminho. Você passaria por cima da pedra, a contornaria ou pegaria outro caminho?"</p><input type="button" value="Passaria por cima da pedra" onclick="anaAns(15)"><br><input type="button" value="Contornaria a pedra." onclick="anaAns(16)"><br><input type="button" value="Pegara=ia outro caminho." onclick="anaAns(17)">'
+            document.getElementById("encontros").innerHTML = '<p> "Essa é uma pergunta importante pra mim, então... Digamos que você estaja caminhano em uma estrada de terra, e então se depara com uma pedra no seu caminho. Você passaria por cima da pedra, a contornaria ou pegaria outro caminho?"</p><input type="button" value="Passaria por cima da pedra" onclick="anaAns(15)"><br><input type="button" value="Contornaria a pedra." onclick="anaAns(16)"><br><input type="button" value="Pegaria outro caminho." onclick="anaAns(17)">'
             return periodo += 1
         case 7:
             document.getElementById("encontros").innerHTML = '<p> "Sonhador, estive pensando em visitar o cinema ultimamente. Apenas por curiosidade, que tipo de filme você mais gosta de assistir?"</p><input type="button" value="Os mais românticos e clichês que estiverem no cartaz." onclick="anaAns(18)"><br><input type="button" value="Filmes de terror, com certeza. Amo sentir a adrenalina do medo, mesmo estando seguro." onclick="anaAns(19)"><br><input type="button" value="Qualquer um que me leve em uma aventura, não vivo sem filmes cheios de ação." onclick="anaAns(20)">'
@@ -407,6 +408,8 @@ function anaAns(resposta) {
 }
 function linGreet(pa) {
     document.getElementById("paquera").innerHTML = "Linda"
+    if (pa==-999)
+    return seteDias(dias, periodo)
     if (pa < 0)
         document.getElementById("encontros").innerHTML = '<p>"Ah... é você."</p>'
     if (pa >= 0 && pa <= 3)
