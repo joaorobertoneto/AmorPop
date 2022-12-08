@@ -1,7 +1,7 @@
 var texIntro = ['É noite, você chega cansado de seu trabalho.<br>A casa está vazia, não há sinais de vida...<br>"Um pouco de companhia faria bem..." Você pensa consigo mesmo.<br>Está ficando tarde, talvez esteja na hora de ir para cama.', 'Ao deitar nela, você sente todo o cansaço e estresse do seu dia te alcançar.<br>Você está exausto, e com a cabeça deitada no travesseiro macio, lamenta mais uma vez: "Por que noites assim são tão solitárias?"', "Você fecha seus olhos e sente um doce sonho começando a se formar.", "..", "...", "....", "Você acorda em uma cama desconhecida.", "Andando pela casa estranha, você encontra um celular numa mesa vazia<br>Você o pega e imediatamente encontra alguns contatos", "Dentre eles, alguns nomes soam familiares:<br>Mikaella, Ana Clara e Linda.<br>Você as conhece de algum lugar?", "Curioso, você decide visitar uma das garotas.<br>Em busca de uma amizade, ou até mesmo algo a mais, você sai pela porta com o celular no bolso.", "De repente, você sente como se algo disesse exatamente onde essas garotas estão<br>Confiando em seus instintos, você decide se encontrar com uma delas."]
 var mikaEndText=['<p>"Ei... Desculpa aparecer do nada, eu realmente precisava tirar isso do peito."</p><p>"Andei pensando sobre nós... Você é um cara bem legal, sabia?"</p><input type="button" value="Continuar" onclick="mikaEnd(1)">', '<p>"Talvez esteja na hora de tentar algo diferente, não acha?"</p><p>É melhor a gente conversar sobre isso em outro lugar. Eu moro perto daqui, quer vir comigo?"</p><input type="button" value="Ir com Mikaela" onclick="end('+"'Mikaella'"+')">']
-var anaEndText=['<p>"Sonhador! Posso falar com você?"</p><p>"Isso pode parecer um pouco repentino, mas eu realmente gosto de você."<input type="button" value="Continuar" onclick="anaEnd(1)">', '<p>"É divertido ter você por perto, eu nunca me senti tão feliz assim antes."</p><p>"Por que não entramos na sua casa para conversar sobre isso? Estou ficando com um pouco de frio."</p><input type="button" value="Ir com Ana Clara" onclick="end('+"'Ana Clara'"+')">']
-var linEndText=['<p>"Ah, você tá aqui! Ainda bem que cheguei a tempo."</p><p>"Desculpa chegar em você assim, do nada..."</p></p><input type="button" value="Continuar" onclick="linEnd(1)">', '<p>Eu acho que gosto de você, de verdade, acho que gosto mesmo."</p><p>"Se você não estiver ocupado, por que não damos uma volta no parque? Tenho muitas coisas que preciso te falar..."</p><input type="button" value="Ir com Linda" onclick="end('+"'Linda'"+')">']
+var anaEndText=['<p>"Sonhador! Posso falar com você?"</p><p>"Isso pode parecer um pouco repentino, mas eu realmente gosto de você."</p><input type="button" value="Continuar" onclick="anaEnd(1)">', '<p>"É divertido ter você por perto, eu nunca me senti tão feliz assim antes."</p><p>"Por que não entramos na sua casa para conversar sobre isso? Estou ficando com um pouco de frio."</p><input type="button" value="Ir com Ana Clara" onclick="end('+"'Ana Clara'"+')">']
+var linEndText=['<p>"Ah, você tá aqui! Ainda bem que cheguei a tempo."</p><p>"Desculpa chegar em você assim, do nada..."</p><input type="button" value="Continuar" onclick="linEnd(1)">', '<p>Eu acho que gosto de você, de verdade, acho que gosto mesmo."</p><p>"Se você não estiver ocupado, por que não damos uma volta no parque? Tenho muitas coisas que preciso te falar..."</p><input type="button" value="Ir com Linda" onclick="end('+"'Linda'"+')">']
 var mikaPA = 0
 var linPA = 0
 var anaPA = 0
@@ -66,7 +66,7 @@ function seteDias(dia, tempo) {
     if (anaPA >= 10){
         document.getElementById("encontros").innerHTML = "<p>Ao caminhar de volta para sua casa, você percebe alguém caminhando em sua direção...</p><p>Após se aproximar mais, você reconhece Ana Clara vindo até você.</p><input type='button' value='Aceitar a confissão de Ana Clara' onclick='anaEnd(0)'><input type='button' value='Não aceitar a confissão de Ana Clara' onclick='anaPA=-999, seteDias("+dias+","+periodo+")'>"
         document.getElementById("dia").innerHTML = "A caminho de casa"
-        t.getElementById("tempo").innerHTML = ""
+        getElementById("tempo").innerHTML = ""
     }
     if (linPA >= 10){
         document.getElementById("encontros").innerHTML = "<p>Ao caminhar de volta para sua casa, você percebe alguém caminhando em sua direção...</p><p>Após se aproximar mais, você reconhece Linda procurando você.</p><input type='button' value='Aceitar a confissão de Linda' onclick='linEnd(0)'><input type='button' value='Não aceitar a confissão de Linda' onclick='linPA=-999, seteDias("+dias+","+periodo+")'>"
@@ -80,6 +80,7 @@ function seteDias(dia, tempo) {
 }
 
 function mikaGreet(pa) {
+    document.getElementById("paquera").innerHTML = "Mikaella"
     if (pa==-999)
     return seteDias(dias, periodo)
     if (pa < 0 )
