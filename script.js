@@ -446,7 +446,7 @@ function linDialog() {
             document.getElementById("encontros").innerHTML = '<p> "Para você, qual é o sinal mais notável de que um relacionamento está fadado a dar errado?."</p><input type="button" value="Falta de confiança entre nós, você precisa se sentir seguro com seu parceiro." onclick="linAns(15)"><br><input type="button" value="Falta de maturidade de alguma parte, você acaba carregando todas as responsabilidades do relacionamento sozinho." onclick="linAns(16)"><br><input type="button" value="Não há nada que não possa ser resolvido em um relacionamento com o esforço necessário." onclick="linAns(17)">'
             return periodo += 1
         case 8:
-            document.getElementById("encontros").innerHTML = '<p> "É uma pergunta meio boba, mas você se considera uma pessoa que gosta de ficar ao ar livre frequentemente?"</p><input type="button" value="Odeio, prefiro muito mais ficar no conforto da minha casa." onclick="linAns(18)"><input type="button" value="Amo! a natureza e o ar livre fazem eu me sentir vivo." onclick="linAns(19)">'
+            document.getElementById("encontros").innerHTML = '<p> "É uma pergunta meio boba, mas você se considera uma pessoa que gosta de ficar ao ar livre frequentemente?"</p><input type="button" value="Odeio, prefiro muito mais ficar no conforto da minha casa." onclick="linAns(18)"><br><input type="button" value="Amo! a natureza e o ar livre fazem eu me sentir vivo." onclick="linAns(19)">'
             return periodo += 1
         case 9:
             document.getElementById("encontros").innerHTML = '<p> "Não vou ficar brava se você errar, só quero ver se você consegue acertar minha flor favorita..."</p><input type="button" value="Crisântemo." onclick="linAns(20)"><br><input type="button" value="Orquídea." onclick="linAns(21)"><br><input type="button" value="Tulipa." onclick="linAns(22)">'
@@ -568,7 +568,7 @@ function linAns(resposta) {
             document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return linPA -= 1
         case 25:
-            document.getElementById("encontros").innerHTML = '<p>"Você também? Eu poderia passar horas lendo livros de românce! Por que não passamos na livraria para olhar alguns?."</p><br><p>Ela parece animada! Você ganhou 1 ponto de afeição com Linda.</p>'
+            document.getElementById("encontros").innerHTML = '<p>"Você também? Eu poderia passar horas lendo livros de românce! Por que não passamos na livraria para olhar alguns?"</p><br><p>Ela parece animada! Você ganhou 1 ponto de afeição com Linda.</p>'
             document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return linPA += 1
     }
