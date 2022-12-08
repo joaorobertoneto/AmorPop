@@ -86,24 +86,24 @@ function mikaGreet(pa) {
     if (pa < 0 )
         document.getElementById("encontros").innerHTML = '<p>"... Que foi? Não tem outra pessoa pra incomodar?"</p>'
     if (pa >= 0 && pa <= 3)
-        document.getElementById("encontros").innerHTML = "<p>Oi.</p>"
+        document.getElementById("encontros").innerHTML = '<p>"Oi."</p>'
     if (pa > 3 && pa <= 6)
-        document.getElementById("encontros").innerHTML = "<p>Ei, como vai? Veio encher meu saco de novo?</p>"
+        document.getElementById("encontros").innerHTML = '<p>"Ei, como vai? Veio encher meu saco de novo?"</p>'
     if (pa > 6 && pa <= 9)
-        document.getElementById("encontros").innerHTML = "<p>... Tá com tempo livre? Se tiver..."
+        document.getElementById("encontros").innerHTML = '<p>"... Tá com tempo livre? Se tiver..."</p>'
     document.getElementById("encontros").innerHTML += '<input type="button" value="Ouvir o que ela tem a dizer" onclick="mikaDialog()">'
 }
 
 function mikaDialog() {
     switch (Math.ceil(Math.random() * 10)) {
         case 1:
-            document.getElementById("encontros").innerHTML = "<p> Aqui, uma pergunta pra você. Acha que a situação financeira de alguém faz diferença num relacionamento?</p><input type='button' value='Sim, eu não namoraria alguém que tivesse uma situação financeira diferente da minha.' onclick='mikaAns(1)'><br><input type='button' value='Não, isso não muda em nada em um relacionamento.' onclick='mikaAns(2)'>"
+            document.getElementById("encontros").innerHTML = '<p> "Aqui, uma pergunta pra você. Acha que a situação financeira de alguém faz diferença num relacionamento?"</p><input type="button" value="Sim, eu não namoraria alguém que tivesse uma situação financeira diferente da minha." onclick="mikaAns(1)"><br><input type="button" value="Não, isso não muda em nada em um relacionamento." onclick="mikaAns(2)">'
             return periodo += 1
         case 2:
-            document.getElementById("encontros").innerHTML = "<p> Ei, você acredita no sobrenatural?</p> <input type='button' value='É claro que sim, já tive minhas próprias experiências com o sobrenatural' onclick='mikaAns(4)'> <br> <input type='button' value='Esse tipo de coisa só existe em filmes de terror' onclick='mikaAns(5)'> <br> <input type='button' value='Não temos como saber, tudo é possível.' onclick='mikaAns(6)'>"
+            document.getElementById("encontros").innerHTML = '<p> "Ei, você acredita no sobrenatural?"</p> <input type="button" value="É claro que sim, já tive minhas próprias experiências com o sobrenatural" onclick="mikaAns(4)"> <br> <input type="button" value="Esse tipo de coisa só existe em filmes de terror" onclick="mikaAns(5)"> <br> <input type="button" value="Não temos como saber, tudo é possível." onclick="mikaAns(6)">'
             return periodo += 1
         case 3:
-            document.getElementById("encontros").innerHTML = "<p> Sonhador, responde rápido. Que tipo de pessoa você se dá bem? </p> <input type='button' value ='Pessoas que me fazem rir, são as melhores de ter por perto.' onclick='mikaAns(7)'> <br> <input type='button' value='Pessoas que se interessam e cuidam de mim, gosto de me sentir cuidado por alguém' onclick='mikaAns(8)' ><br> <input type='button' value='Pessoas inteligentes, é bom manter um cérebro no grupo' onclick='mikaAns(9)' >"
+            document.getElementById("encontros").innerHTML = '<p> "Sonhador, responde rápido. Que tipo de pessoa você se dá bem?" </p> <input type="button" value ="Pessoas que me fazem rir, são as melhores de ter por perto." onclick="mikaAns(7)"> <br> <input type="button" value="Pessoas que se interessam e cuidam de mim, gosto de me sentir cuidado por alguém" onclick="mikaAns(8)" ><br> <input type="button" value="Pessoas inteligentes, é bom manter um cérebro no grupo" onclick="mikaAns(9)" >'
             return periodo += 1
         case 4:
             document.getElementById("encontros").innerHTML = '<p>"Estive pensando em algo, Sonhador. Você contaria uma mentira para não machucar alguém?</p><input type="button" value="Se a verdade machucasse a pessoa, então sim." onclick="mikaAns(10)"><input type="button" value="Não, uma mentira é uma mentira." onclick="mikaAns(11)">'
@@ -133,90 +133,113 @@ function mikaDialog() {
 function mikaAns(resposta) {
     switch (resposta) {
         case 1:
-            document.getElementById("encontros").innerHTML = '<p>"Como eu imaginei."</p><br><p>Ela pareceu não gostar da sua resposta... Você perdeu 1 ponto de afeição com Mikaella.</p><br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
+            document.getElementById("encontros").innerHTML = '<p>"Como eu imaginei."</p><br><p>Ela pareceu não gostar da sua resposta... Você perdeu 1 ponto de afeição com Mikaella.</p>'
+            document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return mikaPA -= 1
         case 2:
-            document.getElementById("encontros").innerHTML = '<p>"Sério? Você acha?"</p><br><p>Ela pareceu surpresa com sua resposta! Você ganhou 2 ponto de afeição com Mikaella.</p><br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
+            document.getElementById("encontros").innerHTML = '<p>"Sério? Você acha?"</p><br><p>Ela pareceu surpresa com sua resposta! Você ganhou 2 ponto de afeição com Mikaella.</p>'
+            document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return mikaPA += 2
         case 3:
-            document.getElementById("encontros").innerHTML = '<p> "Não depende, não. Esquece isso," </p> <br> <p> Mikaella mudou de assunto...  </p><br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
+            document.getElementById("encontros").innerHTML = '<p> "Não depende, não. Esquece isso," </p> <br> <p> Mikaella mudou de assunto...  </p>'
             break;
         case 4:
-            document.getElementById("encontros").innerHTML = '<p>"... Ok, esquisito."</p><br><p>Ela pareceu não gostar da sua resposta... Você perdeu 1 ponto de afeição com Mikaella.</p><br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
+            document.getElementById("encontros").innerHTML = '<p>"... Ok, esquisito."</p><br><p>Ela pareceu não gostar da sua resposta... Você perdeu 1 ponto de afeição com Mikaella.</p>'
+            document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return mikaPA -= 1
         case 5:
-            document.getElementById("encontros").innerHTML = '<p>"Cara, você me irrita."</p><br><p>Ela parece ter ficado brava... Você perdeu 2 pontos de afeição com Mikaella.</p><br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
+            document.getElementById("encontros").innerHTML = '<p>"Cara, você me irrita."</p><br><p>Ela parece ter ficado brava... Você perdeu 2 pontos de afeição com Mikaella.</p>'
+            document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return mikaPA -= 2
         case 6:
-            document.getElementById("encontros").innerHTML = '<p>"Também acho, eu vivia escutando histórias estranhas quando era pequena."</p><br><p>Ela parece concordar com você! Você ganhou 1 ponto de afeição com Mikaella</p><br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
+            document.getElementById("encontros").innerHTML = '<p>"Também acho, eu vivia escutando histórias estranhas quando era pequena."</p><br><p>Ela parece concordar com você! Você ganhou 1 ponto de afeição com Mikaella</p>'
+            document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return mikaPA += 1
         case 7:
-            document.getElementById("encontros").innerHTML = '<p>"É mesmo? Acho que concordo com você."</p><br><p>colocar coisa aqui</p><br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
+            document.getElementById("encontros").innerHTML = '<p>"É mesmo? Acho que concordo com você."</p><br><p>Ela parece feliz com sua escolha! Você ganhou 1 ponto de afeição com Mikaella.</p>'
+            document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return mikaPA += 1
         case 8:
-            document.getElementById("encontros").innerHTML = '<p>"Cuidado? Você é o quê? Um bebê?"</p><br><p>Ela pareceu não gostar da sua preferência... Você perdeu 1 ponto de afeição com Mikaella.</p><br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
+            document.getElementById("encontros").innerHTML = '<p>"Cuidado? Você é o quê? Um bebê?"</p><br><p>Ela pareceu não gostar da sua preferência... Você perdeu 1 ponto de afeição com Mikaella.</p>'
+            document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return mikaPA -= 1
         case 9:
-            document.getElementById("encontros").innerHTML = '<p>"Hm.. Talvez você tenha razão."</p><br><p>Ela pareceu neutra sobre sua preferência.</p><br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
+            document.getElementById("encontros").innerHTML = '<p>"Hm.. Talvez você tenha razão."</p><br><p>Ela pareceu neutra sobre sua preferência.</p>'
             break;
         case 10:
-            document.getElementById("encontros").innerHTML = '<p>"É ótimo saber que não posso confiar em você. Por que não aproveita e acha outra coisa pra fazer?"</p><br><p>Ela ficou brava com sua resposta... Você perdeu 2 pontos de afeição com Mikaella.</p><br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
+            document.getElementById("encontros").innerHTML = '<p>"É ótimo saber que não posso confiar em você. Por que não aproveita e acha outra coisa pra fazer?"</p><br><p>Ela ficou brava com sua resposta... Você perdeu 2 pontos de afeição com Mikaella.</p>'
+            document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return mikaPA -= 2
         case 11:
-            document.getElementById("encontros").innerHTML = '<p>"Sim, é como você disse. Prefiro que sejam diretos comigo, não suporto mentiras."</p><br><p>Ela está sorrindo, parece que gostou de sua resposta! Você ganhou 2 pontos de afeição com Mikaella!.</p><br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
+            document.getElementById("encontros").innerHTML = '<p>"Sim, é como você disse. Prefiro que sejam diretos comigo, não suporto mentiras."</p><br><p>Ela está sorrindo, parece que gostou de sua resposta! Você ganhou 2 pontos de afeição com Mikaella!.</p>'
+            document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return mikaPA += 2
         case 12:
-            document.getElementById("encontros").innerHTML = '<p>"Por que eu esperava algo diferente de você?"</p><br><p>Ela ficou irritada ao ouvir isso... Você perdeu 2 pontos de afeição com Mikaella.</p><br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
+            document.getElementById("encontros").innerHTML = '<p>"Por que eu esperava algo diferente de você?"</p><br><p>Ela ficou irritada ao ouvir isso... Você perdeu 2 pontos de afeição com Mikaella.</p>'
+            document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return mikaPA -= 2
         case 13:
-            document.getElementById("encontros").innerHTML = '<p>"Sim! Tenho amigas que são lindas, mas vazias em questão de personalidade."</p><br><p>Ela ficou feliz com sua resposta! Você ganhou 2 pontos de afeição com Mikaella..</p><br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
+            document.getElementById("encontros").innerHTML = '<p>"Sim! Tenho amigas que são lindas, mas vazias em questão de personalidade."</p><br><p>Ela ficou feliz com sua resposta! Você ganhou 2 pontos de afeição com Mikaella..</p>'
+            document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return mikaPA += 2
         case 14:
-            document.getElementById("encontros").innerHTML = '<p>"Também acredito nisso, vidas passadas me intrigam bastante."</p><br><p>Ela pareceu interessada na sua resposta! Você ganhou 1 ponto de afeição com Mikaella.</p><br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
+            document.getElementById("encontros").innerHTML = '<p>"Também acredito nisso, vidas passadas me intrigam bastante."</p><br><p>Ela pareceu interessada na sua resposta! Você ganhou 1 ponto de afeição com Mikaella.</p>'
+            document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return mikaPA += 1
         case 15:
-            document.getElementById("encontros").innerHTML = '<p>"Hm, então é isso que você acha."</p><br><p>Ela pareceu não gostar da sua resposta... Você perdeu 1 ponto de afeição com Mikaella.</p><br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
+            document.getElementById("encontros").innerHTML = '<p>"Hm, então é isso que você acha."</p><br><p>Ela pareceu não gostar da sua resposta... Você perdeu 1 ponto de afeição com Mikaella.</p>'
+            document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return mikaPA -= 1
         case 16:
-            document.getElementById("encontros").innerHTML = '<p>"Talvez você devesse pensar mais, não acha?"</p><br><p>Ela fez uma cara feia pra você.</p><br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
+            document.getElementById("encontros").innerHTML = '<p>"Talvez você devesse pensar mais, não acha?"</p><br><p>Ela fez uma cara feia pra você.</p>'
             break;
         case 17:
-            document.getElementById("encontros").innerHTML = "<p> Não acho que alguém deveria esconder algo sobre o seu passado. </p> <br> <p> (tu não botou nada então eu inventei algo) Ela ficou decepcionada com sua resposta! Você perdeu 1 ponto. </p><br><input type='button' value='Continuar' onclick='seteDias(" + dias + "," + periodo + ")'>"
+            document.getElementById("encontros").innerHTML = '<p> "Não acho que alguém deveria esconder algo sobre o seu passado." </p> <br> <p> Ela ficou decepcionada com sua resposta! Você perdeu 1 ponto de afeição com Mikaella. </p>'
+            document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return mikaPA -= 1
         case 18:
-            document.getElementById("encontros").innerHTML = "<p> Nem eu, não há motivos para esconder algo. </p> <br> <p> Ela parece satisfeita com sua resposta! Você ganhou 1 ponto de afeição com Mikaella. </p><br><input type='button' value='Continuar' onclick='seteDias(" + dias + "," + periodo + ")'>"
+            document.getElementById("encontros").innerHTML = '<p> "Nem eu, não há motivos para esconder algo." </p> <br> <p> Ela parece satisfeita com sua resposta! Você ganhou 1 ponto de afeição com Mikaella. </p>'
+            document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return mikaPA += 1
         case 19:
-            document.getElementById("encontros").innerHTML = "<p> O quê? Qual o seu problema? </p> <br> <p> Ela parece espantada por sua resposta... Você perdeu 1 ponto de afeição com Mikaella </p><br><input type='button' value='Continuar' onclick='seteDias(" + dias + "," + periodo + ")'>"
+            document.getElementById("encontros").innerHTML = '<p> "O quê? Qual o seu problema?" </p> <br> <p> Ela parece espantada por sua resposta... Você perdeu 1 ponto de afeição com Mikaella </p>'
+            document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return mikaPA -= 1
         case 20:
-            document.getElementById("encontros").innerHTML = "<p> Espero que goste de ser desempregado. </p> <br> <p> Ela te olha com desdém... Você perdeu 1 ponto de afeição com Mikaella </p><br><input type='button' value='Continuar' onclick='seteDias(" + dias + "," + periodo + ")'>"
+            document.getElementById("encontros").innerHTML = '<p> "Espero que goste de ser desempregado." </p> <br> <p> Ela te olha com desdém... Você perdeu 1 ponto de afeição com Mikaella </p>'
+            document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return mikaPA -= 1
         case 21:
-            document.getElementById("encontros").innerHTML = "<p> Ah, você é assim, então. </p> <br> <p> Ela parece levemente decepcionada, mas muda de assunto. </p><br><input type='button' value='Continuar' onclick='seteDias(" + dias + "," + periodo + ")'>"
+            document.getElementById("encontros").innerHTML = '<p> "Ah, você é assim, então." </p> <br> <p> Ela parece levemente decepcionada, mas muda de assunto. </p>'
             break;
         case 22:
-            document.getElementById("encontros").innerHTML = "<p> É, eu faço o suficiente pra sair de lá, nada mais que isso. </p> <br> <p> Ela concorda com você! Você ganhou 1 ponto de afeição com Mikaella. </p><br><input type='button' value='Continuar' onclick='seteDias(" + dias + "," + periodo + ")'>"
+            document.getElementById("encontros").innerHTML = '<p> "É, eu faço o suficiente pra sair de lá, nada mais que isso." </p> <br> <p> Ela concorda com você! Você ganhou 1 ponto de afeição com Mikaella. </p>'
+            document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return mikaPA += 1
         case 23:
-            document.getElementById("encontros").innerHTML = "<p> Ah, sério? Legal, legal. </p> <br> <p> Ela não parece muito interessada </p><br><input type='button' value='Continuar' onclick='seteDias(" + dias + "," + periodo + ")'>"
+            document.getElementById("encontros").innerHTML = '<p> "Ah, sério? Legal, legal." </p> <br> <p> Ela não parece muito interessada. </p>'
             break;
         case 24:
-            document.getElementById("encontros").innerHTML = "<p> Engraçado, você me lembra alguém. </p> <br> <p> Ela riu um pouco, parece que gostou de sua resposta! Você ganhou 1 ponto de afeição com Mikaella </p><br><input type='button' value='Continuar' onclick='seteDias(" + dias + "," + periodo + ")'>"
+            document.getElementById("encontros").innerHTML = '<p> "Engraçado, você me lembra alguém." </p> <br> <p> Ela riu um pouco, parece que gostou de sua resposta! Você ganhou 1 ponto de afeição com Mikaella. </p>'
+            document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return mikaPA += 1
         case 25:
-            document.getElementById("encontros").innerHTML = "<p> Sério? Por que não me disse isso antes? </p> <br> <p> Ela ficou super feliz com sua resposta! Você ganhou 2 pontos de afeição </p><br><input type='button' value='Continuar' onclick='seteDias(" + dias + "," + periodo + ")'>"
+            document.getElementById("encontros").innerHTML = '<p> "Sério? Por que não me disse isso antes?" </p> <br> <p> Ela ficou super feliz com sua resposta! Você ganhou 2 pontos de afeição com Mikaella. </p>'
+            document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return mikaPA += 2
         case 26:
-            document.getElementById("encontros").innerHTML = "<p> Ótimo, acho bom.</p> <br> <p> Ela parece gostar disso! Você ganhou 1 ponto de afeição com Mikaella. </p><br><input type='button' value='Continuar' onclick='seteDias(" + dias + "," + periodo + ")'>"
+            document.getElementById("encontros").innerHTML = '<p> "Ótimo, acho bom."</p> <br> <p> Ela parece gostar disso! Você ganhou 1 ponto de afeição com Mikaella. </p>'
+            document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return mikaPA += 1
         case 27:
-            document.getElementById("encontros").innerHTML = "<p> Sério?</p> <br> <p> Ela te olha com pena, talvez seja melhor trocar de assunto. </p><br><input type='button' value='Continuar' onclick='seteDias(" + dias + "," + periodo + ")'>"
+            document.getElementById("encontros").innerHTML = '<p> "Sério?" </p> <br> <p> Ela te olha com pena, talvez seja melhor trocar de assunto. </p>'
             break;
         case 28:
-            document.getElementById("encontros").innerHTML = "<p> Qual seu problema? Esquece isso </p> <br> <p> Ela parece irritada com a sua resposta... Você perdeu 2 pontos de afeição com Mikaella. </p><br><input type='button' value='Continuar' onclick='seteDias(" + dias + "," + periodo + ")'>"
+            document.getElementById("encontros").innerHTML = '<p> "Qual seu problema? Esquece isso." </p> <br> <p> Ela parece irritada com a sua resposta... Você perdeu 2 pontos de afeição com Mikaella. </p>'
+            document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return mikaPA -= 2
     }
+    document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
 }
 
 function anaGreet(pa) {
@@ -250,7 +273,7 @@ function anaDialog() {
             document.getElementById("encontros").innerHTML = '<p> "Você costuma acordar de manhã? Ou prefere ficar acordado durante a madrugada?"</p><input type="button" value="Sempre acordo cedo, saber que tenho o dia todo pela frente me dá toda a energia que preciso." onclick="anaAns(13)"><br><input type="button" value="Durmo tarde e aproveito a noite, é calma e tranquila, durante essa período sinto que sou mais produtivo." onclick="anaAns(14)">'
             return periodo += 1
         case 6:
-            document.getElementById("encontros").innerHTML = '<p> "Essa é uma pergunta importante pra mim, então... Digamos que você estaja caminhano em uma estrada de terra, e então se depara com uma pedra no seu caminho. Você passaria por cima da pedra, a contornaria ou pegaria outro caminho?"</p><input type="button" value="Passo por cima da pedra" onclick="anaAns(15)"><br><input type="button" value="Contornaria a pedra." onclick="anaAns(16)"><br><input type="button" value="Pegara=ia outro caminho." onclick="anaAns(17)">'
+            document.getElementById("encontros").innerHTML = '<p> "Essa é uma pergunta importante pra mim, então... Digamos que você estaja caminhano em uma estrada de terra, e então se depara com uma pedra no seu caminho. Você passaria por cima da pedra, a contornaria ou pegaria outro caminho?"</p><input type="button" value="Passaria por cima da pedra" onclick="anaAns(15)"><br><input type="button" value="Contornaria a pedra." onclick="anaAns(16)"><br><input type="button" value="Pegara=ia outro caminho." onclick="anaAns(17)">'
             return periodo += 1
         case 7:
             document.getElementById("encontros").innerHTML = '<p> "Sonhador, estive pensando em visitar o cinema ultimamente. Apenas por curiosidade, que tipo de filme você mais gosta de assistir?"</p><input type="button" value="Os mais românticos e clichês que estiverem no cartaz." onclick="anaAns(18)"><br><input type="button" value="Filmes de terror, com certeza. Amo sentir a adrenalina do medo, mesmo estando seguro." onclick="anaAns(19)"><br><input type="button" value="Qualquer um que me leve em uma aventura, não vivo sem filmes cheios de ação." onclick="anaAns(20)">'
@@ -540,7 +563,7 @@ function linAns(resposta) {
             document.getElementById("encontros").innerHTML = '<p>"Ah... Entendo."</p><br><p>Ela parecia esperar outra resposta... Você perdeu 1 ponto de afeição com Linda.</p>'
             document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return linPA -= 1
-        case 24:
+        case 25:
             document.getElementById("encontros").innerHTML = '<p>"Você também? Eu poderia passar horas lendo livros de românce! Por que não passamos na livraria para olhar alguns?."</p><br><p>Ela parece animada! Você ganhou 1 ponto de afeição com Linda.</p>'
             document.getElementById("encontros").innerHTML += '<br><input type="button" value="Continuar" onclick="seteDias(' + dias + ',' + periodo + ')">'
             return linPA += 1
